@@ -1,45 +1,31 @@
-/* Reset some default styles */
-body,
-h1,
-p {
-	margin: 0;
-	padding: 0;
-	text-align: center;
-}
-
-html,
-body {
-	height: 100%;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-}
-
 /* Apply basic styling */
 body {
-	font-family: Arial, sans-serif;
+	/*background styles */
 	background-image: url("night_sky.jpg");
 	background-repeat: no-repeat;
-	background-size: 100% auto;
-	background-color: #f0f0f0;
+	background-size: cover;
+
+	/*font styles*/
+	font-family: "Space Mono", monospace;
+	text-align: center;
+	color: white;
+	text-shadow: 1px 1px 5px black;
 }
 
-.container {
-	max-width: 600px;
+.heading {
+	max-width: 1000px;
 	margin: 0 auto;
 	padding: 20px;
-	background-color: #fff;
-	border-radius: 5px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	margin-bottom: 10px;
 }
 
 h1 {
-	font-size: 24px;
-	color: #333;
-	margin-bottom: 10px;
+	font-size: 60px;
+	font-weight: lighter;
 }
 
 p {
 	font-size: 16px;
-	color: #555;
+	text-align: left;
+	font-weight: lighter;
 }
