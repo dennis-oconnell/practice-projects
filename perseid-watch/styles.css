@@ -1,46 +1,41 @@
-/* Apply basic styling */
-body {
-	/*background styles */
-	background-image: url("night_sky.jpg");
+body,
+html {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.bg-container {
+	/* The image used */
+	background-image: url("comets.jpg");
+
+	/* Full height */
+	height: 100%;
+
+	/* Center and scale the image nicely */
+	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
+}
 
-	/*font styles*/
-	font-family: "Space Mono", monospace;
+.cd-container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: #ffffff;
 	text-align: center;
-	color: white;
-	text-shadow: 1px 1px 5px black;
+	font-family: "Courier New", Courier, monospace;
 }
 
-.heading {
-	max-width: 1000px;
-	margin: 0 auto;
-	padding: 20px;
-	margin-bottom: 10px;
-}
-.countdown-timer {
+.timer {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
 	display: flex;
 	justify-content: center;
-	flex-direction: row;
-	font-family: "Bungee", sans-serif;
-	font-size: 50px;
-}
-.countdown-el {
-	display: flex;
-	flex-direction: column;
-	flex-grow: 1;
-	align-items: center;
-}
-.ticker {
-	font-size: 100px;
-}
-h1 {
-	font-size: 60px;
-	font-weight: lighter;
 }
 
-p {
-	font-size: 16px;
-	text-align: left;
-	font-weight: lighter;
+.countdown-el {
+	padding-left: 4rem;
+	padding-right: 4rem;
 }
