@@ -29,8 +29,6 @@ html {
 }
 
 .timer {
-	padding-top: 2rem;
-	padding-bottom: 2rem;
 	display: flex;
 	justify-content: center;
 }
@@ -38,4 +36,11 @@ html {
 .countdown-el {
 	padding-left: 4rem;
 	padding-right: 4rem;
+}
+
+.ticker {
+	font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+	font-weight: bold;
+	font-size: 80px;
+	margin: 0;
 }
