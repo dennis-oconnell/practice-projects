@@ -1,5 +1,6 @@
-// JavaScript code for your project goes here
+let currentDate = new Date();
+let perseidDate = new Date("Aug 12, 2024 00:20:00");
 
-document.addEventListener("DOMContentLoaded", function () {
-	// Your code that interacts with the DOM or performs other actions goes here
-});
+let timeToPerseid = perseidDate - currentDate;
+
+console.log(timeToPerseid);
