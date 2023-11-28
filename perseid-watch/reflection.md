@@ -10,8 +10,7 @@
 
 2. **Learning and Technical Skills (What new technologies or skills did you learn and apply during the project?)**
 
-- I used vanilla JS, html, and css.
-  -I learned about javascript dates and how time is handled.
+- I used vanilla JS, html, and css. I learned about javascript dates and how time is handled.
 
 3. **Challenges and Problem Solving(What were the main challenges you faced, and how did you overcome them?)**
 

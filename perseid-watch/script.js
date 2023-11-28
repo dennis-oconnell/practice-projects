@@ -6,7 +6,7 @@ function updateTimeLeft() {
 	let daysLeft = Math.floor(milisecondsLeft / (3600 * 1000) / 24);
 	let hoursLeft = Math.floor(milisecondsLeft / (3600 * 1000) - daysLeft * 24);
 	let minsLeft = Math.floor((milisecondsLeft % (3600 * 1000)) / 60000);
-	let secsLeft = Math.floor((milisecondsLeft % (3600 * 1000)) / 1000);
+	let secsLeft = Math.floor((milisecondsLeft / 1000) % 60);
 
 	document.getElementById("days").innerText = daysLeft;
 	document.getElementById("hours").innerText = hoursLeft;
