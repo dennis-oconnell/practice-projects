@@ -1,1 +1,119 @@
 UI inspiration: https://uidesigndaily.com/posts/sketch-questionnaire-choice-submit-day-924
+CSS Background Pattern: https://www.magicpattern.design/tools/css-backgrounds
+Fun facts about astronomy: chatGPT3.5
+
+What is a black hole's defining characteristic?
+
+A. Radiates light
+B. Emits heat
+C. Gravitational pull
+D. Reflects light
+Correct Answer: C. Gravitational pull
+What is on a collision course with the Milky Way?
+
+A. Andromeda Galaxy
+B. Triangulum Galaxy
+C. Orion Nebula
+D. Sombrero Galaxy
+Correct Answer: A. Andromeda Galaxy
+What are pulsars similar to in their emission of radiation?
+
+A. Flashlights
+B. Lighthouses
+C. Lasers
+D. Lanterns
+Correct Answer: B. Lighthouses
+How is gold formed in space?
+
+A. Supernova explosions
+B. Black hole collisions
+C. Neutron star collisions
+D. Solar flares
+Correct Answer: C. Neutron star collisions
+Which planet hosts the Great Red Spot, a massive storm?
+
+A. Mars
+B. Jupiter
+C. Saturn
+D. Venus
+Correct Answer: B. Jupiter
+What percentage of the universe is composed of dark matter?
+
+A. 50%
+B. 65%
+C. 85%
+D. 95%
+Correct Answer: C. 85%
+What does a "Blue Moon" refer to?
+
+A. The second full moon in a calendar month
+B. A moon appearing blue in color
+C. A rare lunar eclipse
+D. The first full moon in a calendar month
+Correct Answer: A. The second full moon in a calendar month
+What is constantly released by the Sun's outer atmosphere into space?
+
+A. Solar flares
+B. Solar wind
+C. Cosmic rays
+D. Gamma rays
+Correct Answer: B. Solar wind
+What powers quasars, making them incredibly bright?
+
+A. Fusion reactions
+B. Supernova explosions
+C. Supermassive black holes
+D. Neutron star collisions
+Correct Answer: C. Supermassive black holes
+Which planet hosts Olympus Mons, the tallest volcano in the solar system?
+
+A. Earth
+B. Mars
+C. Venus
+D. Jupiter
+Correct Answer: B. Mars
+
+
+Black Holes: Black holes are so dense that nothing, not even light, can escape their gravitational pull. They're like cosmic vacuum cleaners.
+
+Galaxy Collision: The Milky Way, our galaxy, is on a collision course with the Andromeda Galaxy. However, this collision is not expected to occur for another 4 billion years.
+
+Pulsars: Pulsars are highly-magnetized, rotating neutron stars that emit beams of electromagnetic radiation out of their magnetic poles. They are like cosmic lighthouses.
+
+Gold Origin: Gold is formed in space during the collision of neutron stars. The intense heat and pressure generate the conditions necessary for gold to be produced.
+
+Great Red Spot: Jupiter's Great Red Spot is a giant storm that has been raging for at least 350 years. It is so large that Earth could easily fit inside it.
+
+Dark Matter: Approximately 85% of the matter in the universe is composed of dark matter, a mysterious substance that doesn't emit, absorb, or reflect light.
+
+Blue Moon: A "Blue Moon" doesn't actually appear blue. It is the second full moon in a calendar month. However, in rare cases, it can appear blue due to atmospheric conditions.
+
+Solar Wind: The Sun's outer atmosphere, known as the corona, constantly releases charged particles into space, creating the solar wind, which affects the entire solar system.
+
+Quasars: Quasars are incredibly bright and energetic centers of distant galaxies, powered by supermassive black holes. They can outshine entire galaxies.
+
+Olympus Mons: Olympus Mons on Mars is the tallest volcano in the solar system, standing at over 13 miles (21 kilometers) high, nearly three times the height of Mount Everest.
+
+Hubble Space Telescope: The Hubble Space Telescope can see objects over 13 billion light-years away, allowing scientists to observe the early universe.
+
+Asteroid Belt: The asteroid belt, located between Mars and Jupiter, is not as densely populated as commonly depicted in science fiction. There is a lot of space between asteroids.
+
+Cryovolcanoes: Some moons, like Triton (a moon of Neptune) and Europa (a moon of Jupiter), have cryovolcanoes that spew a mixture of water, ammonia, and other substances.
+
+Venus Rotation: Venus rotates on its axis so slowly that a day on Venus (one full rotation) is longer than a year on Venus (one orbit around the Sun).
+
+Supernovae Seeds: Supernovae, the explosions of dying massive stars, distribute heavy elements like iron, carbon, and gold into space, which eventually contribute to the formation of new stars and planets.
+
+Rogue Planets: Some planets don't orbit stars and instead drift through the galaxy independently. These "rogue planets" may outnumber stars in our Milky Way.
+
+The Cosmic Microwave Background (CMB): The CMB is radiation left over from the Big Bang. It's like a snapshot of the universe when it was just 380,000 years old.
+
+Neptune's Wind Speeds: Neptune has the fastest winds in the solar system, reaching speeds of over 1,200 miles per hour (about 1,900 kilometers per hour).
+
+The Kuiper Belt: Beyond Neptune's orbit is the Kuiper Belt, a region of the solar system containing dwarf planets like Pluto, as well as numerous icy bodies.
+
+The Farthest Human-made Object: Voyager 1, launched in 1977, is the farthest human-made object from Earth. It has entered interstellar space and continues to send data back to Earth.
+
+
+
+
