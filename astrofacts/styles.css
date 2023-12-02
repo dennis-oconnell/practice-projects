@@ -3,9 +3,10 @@
 }
 
 body {
-	background-image: url("pexels-jakub-novacek-924824.jpg");
-	background-repeat: none;
-	background-size: 100%;
+	background-color: #e5e5f7;
+	opacity: 0.8;
+	background-image: radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
+	background-size: 10px 10px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -13,10 +14,29 @@ body {
 	min-height: 100vh;
 }
 
+h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: xx-large;
+}
+
+p {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: large;
+}
+
+ul {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: medium;
+}
+
 .form {
 	text-align: center;
-	color: white;
-	height: 70vh;
-	width: 50vw;
-	background-color: rgba(0, 0, 0, 0.275);
+	color: #011440;
+	height: 75vh;
+	width: 75vw;
+	background-color: white;
+	border-radius: 25px;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+		rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+		rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
