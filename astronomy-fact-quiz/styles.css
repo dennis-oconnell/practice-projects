@@ -3,10 +3,9 @@
 }
 
 body {
-	background-color: #e5e5f7;
-	opacity: 0.8;
-	background-image: radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
-	background-size: 10px 10px;
+	background-image: url(vectorstock_5098438.png);
+	background-size: 300px 300px;
+	background-repeat: repeat;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -35,6 +34,7 @@ ul {
 	height: 75vh;
 	width: 75vw;
 	background-color: white;
+	opacity: 0.95;
 	border-radius: 25px;
 	box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
 		rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
