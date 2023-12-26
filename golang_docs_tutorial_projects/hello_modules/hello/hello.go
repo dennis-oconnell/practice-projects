@@ -1,3 +1,4 @@
+// Declare a main package. In Go, code executed as an application must be in a main package.
 package main
 
 import (
