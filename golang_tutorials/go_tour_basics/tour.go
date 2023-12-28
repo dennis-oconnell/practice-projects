@@ -23,6 +23,12 @@ func split(sum int) (x, y int) {
 	return 
 }
 
+func needInt(x int) int { return x*10 + 1 }
+func needFloat(x float64) float64 {
+	return x * 0.1
+}
+
+
 func main() {
 	fmt.Println("1. My favorite number is", rand.Intn(10))
 
@@ -95,5 +101,52 @@ func main() {
 	var cZero bool
 	var dZero string
 	fmt.Printf("12. The Zero values for int, float64, bool, and string are the following: %v %v %v %q\n", aZero, bZero, cZero, dZero)
-	fmt.Print("\n")
+
+	//Type Conversions: The expression T(v) converts the value v to the type T.
+	//Unlike in C, in Go assignment between items of different type requires an explicit conversion.
+	iCon := 42
+	fCon := float64(iCon)
+	uCon := uint(fCon)
+	fmt.Println("13. Type Conversions Part 1: ", iCon, fCon, uCon)
+	var xCon, yCon = 3, 4
+	var gCon float64 = math.Sqrt(float64(xCon*xCon + yCon*yCon))
+	var zCon uint = uint(gCon)
+	fmt.Println("13. Type Conversions Part 2: ", xCon, yCon, gCon, zCon)
+
+	//Type Inference
+	//When declaring a variable without specifying an explicit type (either by using the := syntax or var = expression syntax), the variable's type is inferred from the value on the right hand side.
+	var jInf int
+	iInf := jInf // iInf is also an int
+	fmt.Println("14. Type Inference Part 1: ",iInf)
+
+	//when the right hand side contains an untyped numeric constant, the new variable may be an int, float64, or complex128 depending on the precision of the constant	
+	eInf := 42           // int
+	fInf := 3.142        // float64
+	gInf := 0.867 + 0.5i // complex128
+	fmt.Println("14. Type Inference Part 2: ", eInf, fInf, gInf)
+
+	//when we change the initial value of vChange below, the type is affected
+	v := 42i // change me!
+	fmt.Printf("14. Type Inference Part 3: v is of type %T\n", v)
+
+	//Constants are declared like variables but with the const keyword. They cannot be declared using ':=' syntax and they can be character, string, boolean, or numeric values.
+	const World = "世界"
+	const Pi = 3.14	
+	const Truth = true
+	fmt.Println("15. Hello", World)
+	fmt.Println("15. Happy", Pi, "Day")
+	fmt.Println("15. Go rules?", Truth)
+
+	//Numeric constants are high-precision values. An untyped constant takes the type needed by its context.
+	//(An int can store at maximum a 64-bit integer, and sometimes less.)
+	const (
+		// Create a huge number by shifting a 1 bit left 100 places.
+		// In other words, the binary number that is 1 followed by 100 zeroes.
+		Big = 1 << 100
+		// Shift it right again 99 places, so we end up with 1<<1, or 2.
+		Small = Big >> 99
+	)
+	fmt.Println("16. ", needInt(Small))
+	fmt.Println("16. ", needFloat(Small))
+	fmt.Println("16. ", needFloat(Big))
 }
