@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math"
+	"runtime"
 )
 
 func sqrt(x float64) string {
@@ -10,6 +11,17 @@ func sqrt(x float64) string {
 		return sqrt(-x) + "i"
 	}
 	return fmt.Sprint(math.Sqrt(x))
+}
+
+func SqrtGuessMethod(x float64) float64 {
+	e:= 0
+	z:= 1.0
+	for e < 10 {
+		z -= (z*z - x) / (2*z)	
+		e += 1
+		fmt.Println(z)
+	}
+	return z
 }
 
 func pow(x, n, lim float64) float64 {
@@ -87,5 +99,31 @@ func main() {
 		pow2(3, 3, 20),
 	)
 
+	//When we run the function SqrtGuessMethod we utilize a for loop as if it is a while loop
+	//We also play around with some other conditionals
+	//Again, the call to this function returns its results before the print call in the main method
+	fmt.Println("8. Watch what happens when we run the function SqrtGuessMethod: ", SqrtGuessMethod(51))
+
+	//Switch Statements
+	//A switch statement is a shorter way of writing a sequence of if - else statements
+	//It runs the first case whose value is equal to the condition expression
+	//Go only runs the selected case, not all the cases that follow.
+	//Go's switch cases need not be constants, and the values involved need not be integers.
+	//When we run this code in the go tour online, it returns Linux, how interesting!
+	fmt.Print("Go runs on ")
+	switch os := runtime.GOOS; os {
+	case "darwin":
+		fmt.Println("OS X.")
+	case "linux":
+		fmt.Println("Linux.")
+	default:
+		// freebsd, openbsd,
+		// plan9, windows...
+		fmt.Printf("%s.\n", os)
+	}
+
+	//Switch Evaluation Order
+	//Switch cases evaluate from the top down, stopping when a case succeeds
+	
 
 }
