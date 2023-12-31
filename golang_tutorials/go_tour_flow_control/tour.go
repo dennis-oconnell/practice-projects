@@ -145,5 +145,35 @@ func main() {
 		fmt.Println("Too far away...")
 	}
 
+	//11.Switch With No Condition
+	//This can be a clean way to write long if-then-else chains
+	fmt.Println("11. A switch with no condition is the same as 'switch true'")
+	t:= time.Now()
+	switch {
+	case t.Hour() < 12:
+		fmt.Println("Good Morning!")
+	case t.Hour() < 17:
+		fmt.Println("Good Afternoon!.")
+	default:
+		fmt.Println("Good Evening!")
+	}
 
+	//12. Defer
+	//A defer statement defers the execution of a function until the surrounding function returns
+	//The deferred call's arguments are evaluated immediately, but the function call is not executed until the surrounding function returns.
+
+	defer fmt.Println("world")
+
+	fmt.Println("hello")
+	fmt.Println("wait")
+
+	//13. Defer Stacking
+	//Defer statements can be stacked, when the function returns, the defer statements are executed in a last in first out manner
+	fmt.Println("counting")
+
+	for i := 0; i < 10; i++ {
+		defer fmt.Println(i)
+	}
+
+	fmt.Println("Done!")
 }
