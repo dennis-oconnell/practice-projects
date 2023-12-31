@@ -65,4 +65,25 @@ func main() {
 
 	fmt.Println(v1, e, v2, v3)
 
+	//6. Arrays 
+	//The Type [n]T is an array of n values of type T
+	//An array's length is part of its type, so arrays can't be resized
+	
+	var a [10]int		//declared a variable as an array of ten integers with default values	
+	fmt.Println(a)
+
+	var b [2]string
+	b[0] = "Hi"
+	b[1] = "Planet"
+	fmt.Println(b[0],b[1])
+	fmt.Println(b)
+
+	sixPrimes := [6]int{2,3,5,7,11,13}
+	fmt.Println(sixPrimes)
+
+	//7. Slices
+	//An array is of a fixed size, but slices are dynamically-sized!
+	//A slice is a dynamically-sized, flexible view into the elements of an array.
+	//In practice, slices are much more common than arrays.
+	//
 }
