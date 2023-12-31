@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"math"
 	"runtime"
+	"time"
 )
 
 func sqrt(x float64) string {
@@ -124,6 +125,25 @@ func main() {
 
 	//Switch Evaluation Order
 	//Switch cases evaluate from the top down, stopping when a case succeeds
-	
+	/*
+		the code below does not call if i==0
+		switch j {
+		case 0:
+		case f():
+		}
+	*/
+	fmt.Println("10. When is Saturday? ")
+	today := time.Now().Weekday()
+	switch time.Saturday {
+	case today + 0:
+		fmt.Println("Today!")
+	case today + 1: 
+		fmt.Println("Tomorrow.")
+	case today + 2: 
+		fmt.Println("In just two days.")
+	default:
+		fmt.Println("Too far away...")
+	}
+
 
 }
