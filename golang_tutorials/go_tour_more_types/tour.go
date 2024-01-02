@@ -174,4 +174,26 @@ func main() {
 	if(emp == nil){
 		fmt.Println("the 'emp' array is empty, its a nil slice! It has a length of 0 and a capacity of 0 and no underlying array!")
 	}
+
+	//13. Creating a Slice With Make
+	// Slices can be made with built in function 'make' function
+	//This is how we can make dynamically sized arrays in Go
+	//The 'make' function allocates a zeroed array and returns a slice that refers to that array 
+	// a:= make([]int, 5)         //len(a) = 5
+	//You can specify a capacity, if you pass a third argument to make
+	// b:=make([]int, 5) 		//len(b)=0, cap(b)=5
+	// b=b[:cap(b)]				//len(b)=5, cap(b)=5
+	// b=b[1:]					//len(b)=4, cap(b)=4
+
+	mA:=make([]int,5)
+	printSlice(mA)
+	
+	mB:=make([]int,0,5)
+	printSlice(mB)
+
+	mC:=mB[:2]
+	printSlice(mC)
+
+	mD:=mC[2:5]
+	printSlice(mD)
 }
