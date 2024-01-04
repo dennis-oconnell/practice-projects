@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 type Vertex struct {
 	X int
@@ -196,4 +199,25 @@ func main() {
 
 	mD:=mC[2:5]
 	printSlice(mD)
+
+	//14.Slices of Slices! So super slicey!
+	//Slices can contain any type, including other slices!
+
+	//Create a tic tac toe board
+	board:=[][]string{
+		[]string{"_", "_", "_"},
+		[]string{"_", "_", "_"},
+		[]string{"_", "_", "_"},
+	}
+
+	//players can take turns like so:
+	board[0][0] = "X"
+	board[2][2] = "O"
+	board[1][2] = "X"
+	board[1][0] = "O"
+	board[0][2] = "X"
+
+	for i := 0; i < len(board); i++ {
+		fmt.Printf("%s\n", strings.Join(board[i], " "))
+	}
 }
