@@ -220,4 +220,60 @@ func main() {
 	for i := 0; i < len(board); i++ {
 		fmt.Printf("%s\n", strings.Join(board[i], " "))
 	}
+
+	//15. Appending to a Slice
+	//it is common to append elements to a slice, so Go has the built in append function
+	// func append(s []T, vs ... T)[]T
+	// the first element 's' of append is a slice of type T, and the rest are 'T' values to append to the slice
+	// the resulting value of the append function is a slice containing the elements of the original plus the provided vals
+	// if the backing array of 's' is too small to fit all the given values a bigger array will be allocated
+	// the returned slice will point to the newly allocated array
+
+	var superSlice []int
+	printSlice(superSlice)
+
+	//append all works on nil slices
+	superSlice = append(superSlice,0)
+	printSlice(superSlice)
+
+	//the slice grows as needed
+	superSlice = append(superSlice, 1)
+	printSlice(superSlice)
+
+	//we can add many elements at once
+	superSlice = append(superSlice, 2,3,4,5)
+	printSlice(superSlice)
+
+	//16. Range
+	//The range form of the for loop iterates over a slice or map
+	//When ranging over a slice, two values are returned for each iteration.
+	//The first is the index, and the second is a copy of the element at that index
+
+	var superPows = []int{1,2,4,8,16,32,64,128}
+	for i, v := range superPows {
+		fmt.Printf("2**%d = %d\n",i,v)
+		fmt.Println(i,v)
+	}
+
+	//17. Range Cont. 
+	//You can skip the index or value by assigning to _
+	megaPows := make([]int, 10)
+	for i, _ := range megaPows {
+		fmt.Println(i)
+	}
+
+	for _, value := range megaPows {
+		fmt.Println(value)
+	}
+
+	//if we only want the index, we can omit the second variable
+	for i := range megaPows {
+		//fmt.Println(i)
+		megaPows[i] = 1 << uint(i) // == 2**i
+		//fmt.Println(megaPows[i])
+	}
+	for _, value := range megaPows{
+		fmt.Printf("%d\n", value)
+	}
+
 }
