@@ -3,12 +3,41 @@ package main
 import (
 	"fmt"
 	"strings"
+
+	"golang.org/x/tour/pic"
 )
 
 type Vertex struct {
 	X int
 	Y int
+}	
+
+type Verty struct {
+	Lat, Long float64
 }
+
+func Pic(dx, dy int) [][]uint8 {
+	p := make([][]uint8,  dy)
+	for i := range p {
+		p[i] = make([]uint8, dx)
+	}
+	
+	for i := 0; i < dy; i++ {
+		for j := 0; j < dx; j++ {
+			p[i][j] = uint8(-i)
+		}
+	}	
+	
+	for a := range p {
+		for b:= range p{
+			p[a][b] = uint8(-b)
+		}
+	}
+	
+	return p
+}
+
+var mappy map[string]Verty
 
 func printSlice(s []int) {
 	fmt.Printf("len=%d cap=%d %v\n", len(s), cap(s), s)
@@ -276,4 +305,20 @@ func main() {
 		fmt.Printf("%d\n", value)
 	}
 
+	//18. An exercise in slices
+	//Implement Pic.
+	//It should return a slice of length dy, each element of which is a slice of dx 8-bit unsigned integers	
+	//When we run the program, our picture will be displayed, interpreting the integers as grayscale values
+	pic.Show(Pic)
+
+
+	//19. Maps
+	// A Map maps keys to values
+	// The zero value of a map is nil. A nil map has no keys, nor can keys be added
+	// The make function returns a map of the given type, initialized and ready to use
+	mappy = make(map[string]Verty)
+	mappy["Bell Labs"] = Verty{
+		40.68433, -74.39967,
+	}
+	fmt.Println(mappy["Bell Labs"])
 }
