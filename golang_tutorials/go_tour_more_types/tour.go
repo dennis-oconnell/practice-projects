@@ -309,6 +309,7 @@ func main() {
 	//Implement Pic.
 	//It should return a slice of length dy, each element of which is a slice of dx 8-bit unsigned integers	
 	//When we run the program, our picture will be displayed, interpreting the integers as grayscale values
+	//The program runs in gotour but doesn't in my local environment because I am not sure how to properly import the module for displaying our image
 	pic.Show(Pic)
 
 
@@ -321,4 +322,49 @@ func main() {
 		40.68433, -74.39967,
 	}
 	fmt.Println(mappy["Bell Labs"])
+
+	//20. Map Literals
+	//Maps are like struct literals, but the keys are required.
+	var missMappy = map[string]Verty{
+		"Bell Labs": Verty{
+			40.68433, -74.39967,
+		},
+		"Google": Verty{
+			37.42202, -122.08408,
+		},
+	}
+	fmt.Println(missMappy)
+
+	//21. Map Literals Continued
+	//If the top level type is just a type name, you can omit it from the elements of the literal 
+
+	var misterMappy = map[string]Verty{
+		"Bell Labs" : {40.68433, -74.39967,},
+		"Google" : {37.42202, -122.08408,},
+	}
+
+	fmt.Println(misterMappy)
+
+	//22. Mutating Maps
+	//Inserting an element into map m: "m[key] = elem"
+	//Retrieve an element: "elem = m[key]"
+	//Delete an element: "delete(m,key)"
+	//Test that a key is present with a two value assignment: "elem, ok = m[key]"
+	//If key is in m, ok is true, if not, ok is false
+	//If key is not in m, then elem is the zero value for the map's element type
+	//Note: If elem or ok have not yet been declared you could use a short declaration form: "elem, ok := m[key]"
+
+	juniorMap:= make(map[string]int)
+
+	juniorMap["Answer"] = 42
+	fmt.Println(juniorMap["Answer"])
+
+	juniorMap["Answer"] = 48
+	fmt.Println(juniorMap["Answer"])
+
+	delete(juniorMap, "Answer")
+	fmt.Println(juniorMap["Answer"])
+
+	elem, ok := juniorMap["Answer"]
+	fmt.Println("The element value ", elem, "is present?", ok)
 }
