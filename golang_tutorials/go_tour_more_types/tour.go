@@ -43,6 +43,33 @@ func printSlice(s []int) {
 	fmt.Printf("len=%d cap=%d %v\n", len(s), cap(s), s)
 }
 
+func WordCount(s string) map[string]int {
+	//create an empty map with string keys and int values
+	returnyMap:= make(map[string]int)
+	
+	//create a variable to store the fields of the tested string using string.Fields
+	fieldyFields:= strings.Fields(s)
+	
+	//loop through the fields and allocate a matching key for each field with a corresponding count of zero for each field
+	for i:= range fieldyFields {
+		returnyMap[fieldyFields[i]] = 0
+		fmt.Println(fieldyFields[i])
+	}
+	
+	//increase the count for each field each time it is present in fieldyFields
+	for key:= range returnyMap {
+	count:= 0
+		for j:= range fieldyFields{
+			if(key == fieldyFields[j]){
+			count++
+			returnyMap[key] = count
+			}
+		}
+	}
+	
+	return returnyMap
+}
+
 func main() {
 	//1. The Wonderful World Of Pointers
 	//Pointers hold the memory address of a value
@@ -367,4 +394,10 @@ func main() {
 
 	elem, ok := juniorMap["Answer"]
 	fmt.Println("The element value ", elem, "is present?", ok)
+
+	//23. Maps Exercise
+	//Implement WordCount 
+	WordCount("hello world")
+	
+
 }
