@@ -86,9 +86,14 @@ func adder() func(int) int {
 
 // fibonacci is a function that returns
 // a function that returns an int.
-func fibonacci() func(int) int {
-	return func(x int) int{
-		return x
+func fibonacci() func() int {
+	fibyAlpha:=0
+	fibyBeta:=1
+	return func() int{
+		ralph:= fibyAlpha + fibyBeta
+		fibyAlpha = fibyBeta
+		fibyBeta = ralph
+		return ralph
 	}
 }
 
@@ -456,9 +461,10 @@ func main() {
 	//3+5 = 8
 	//5+8 = 13
 	//8+13 = 21
+	//Fibonaci function completed using closures! And it works both here and in the demo
 
 	f := fibonacci()
-		for i := 0; i < 10; i++ {
-			fmt.Println(f(2))
+		for i := 0; i < 20; i++ {
+			fmt.Println(f())
 		}
 }
