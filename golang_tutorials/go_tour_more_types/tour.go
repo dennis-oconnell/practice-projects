@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"strings"
 
 	"golang.org/x/tour/pic"
@@ -68,6 +69,27 @@ func WordCount(s string) map[string]int {
 	}
 	
 	return returnyMap
+}
+
+func compute(fn func(float64, float64) float64) float64 {
+	return fn(3, 4)
+}
+
+//adder is a func that returns a func that returns an int
+func adder() func(int) int {
+	sum := 0
+	return func(x int) int {
+		sum += x
+		return sum
+	}
+}
+
+// fibonacci is a function that returns
+// a function that returns an int.
+func fibonacci() func(int) int {
+	return func(x int) int{
+		return x
+	}
 }
 
 func main() {
@@ -397,7 +419,46 @@ func main() {
 
 	//23. Maps Exercise
 	//Implement WordCount 
+	//Woot Woot! Completed! Copy and paste func WordCount into tourdemo and it passes all tests!
 	WordCount("hello world")
 	
 
+	//24. Function Values
+	//Functions are values too. They can be passed around just like other values.
+	//Function values may be used as function arguments and return values.
+	hypot := func(x, y float64) float64 {
+		return math.Sqrt(x*x + y*y)
+	}
+	fmt.Println(hypot(5, 12))
+
+	fmt.Println(compute(hypot))
+	fmt.Println(compute(math.Pow))
+
+	//25. Function Closures
+	//Go functions may be closures. A closure is a function value that references variables from outside its body.
+	//The function may access and assign to the referenced variables; in this sense the function is "bound" to the variables.
+	//for example, the adder function returns a 'closure'. each closure is bound to its own 'sum' variable
+	
+	posi, nega := adder(), adder()
+	for i := 0; i < 10; i++ {
+		fmt.Println(
+			posi(i),
+			nega(-2*i),
+		)
+	}
+
+	//26. Exercise: Fibonaci Closure
+	//Let's have some fun with funcs
+	//Implement a fibonaci func that returns a func ('closure') that returns successive fibonacci numbers (0,1,1,2,3,5,8,13,21,34)
+	//1+1 = 2
+	//1+2 = 3
+	//2+3 = 5
+	//3+5 = 8
+	//5+8 = 13
+	//8+13 = 21
+
+	f := fibonacci()
+		for i := 0; i < 10; i++ {
+			fmt.Println(f(2))
+		}
 }
