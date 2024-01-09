@@ -11,15 +11,21 @@ type Book struct {
 	Author string
 }	
 
+//Task 5: Display Library
+//Write a function displayBooks to print the details of each book in the library.
+func displayBooks(library []Book, availability map[Book]string){
+	fmt.Println("Here are the contents of your books and their availability")
+	for i, book := range library {
+		fmt.Printf("TITLE: %s\n AUTHOR: %s\n AVAIL: %s\n", book.Title, book.Author, availability[library[i]])
+	}
+}
+
 func main(){
 	//Task 2: Library Initialization
 	//Create an empty library using a slice of books.
 	library := make([]Book, 0)
 
 	//Books to be added to the library:
-	//Title: "The Catcher in the Rye", Author: "J.D. Salinger"
-	//Title: "To Kill a Mockingbird", Author: "Harper Lee"
-	//Title: "1984", Author: "George Orwell"
 	stackOfBooks:=[]Book{
 		{"The Catcher in the Rye", "J.D. Salinger"},
 		{"To Kill a Mockingbird", "Harper Lee"},
@@ -29,7 +35,6 @@ func main(){
 	//Task 3: Populate the Library with append
 	for i := range stackOfBooks {
 		library = append(library,stackOfBooks[i])
-		fmt.Println(library[i])
 	}
 
 	//Task 4: Availability Map
@@ -40,4 +45,11 @@ func main(){
 		avail[library[i]] = "available"
 	}
 
+	//Task 5: Display Library
+	displayBooks(library, avail)
+
+	//Task 6: Checkout Book
+	//Write a function checkoutBook that takes a book title as a parameter and simulates checking out a book.
+	//If the book is available, mark it as checked out and print a message.
+	//If the book is not available, print a message indicating that it's not available.
 }
