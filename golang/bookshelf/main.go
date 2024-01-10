@@ -20,6 +20,12 @@ func displayBooks(library []Book, availability map[Book]string){
 	}
 }
 
+//Task 6: Checkout Book
+//Write a function checkoutBook that takes a book title as a parameter and simulates checking out a book.
+func checkoutBook(availability map[Book]string, book Book) {
+	availability[book] = "not available"
+}
+
 func main(){
 	//Task 2: Library Initialization
 	//Create an empty library using a slice of books.
@@ -51,5 +57,11 @@ func main(){
 	//Task 6: Checkout Book
 	//Write a function checkoutBook that takes a book title as a parameter and simulates checking out a book.
 	//If the book is available, mark it as checked out and print a message.
-	//If the book is not available, print a message indicating that it's not available.
+	//If the book is not available, print a message indicating that it's not available.	
+	checkMeOut:=Book{
+		"The Catcher in the Rye", "J.D. Salinger",
+	}
+	
+	checkoutBook(avail, checkMeOut)
+	displayBooks(library, avail)
 }
