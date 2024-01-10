@@ -44,3 +44,13 @@ After completing the Go Tour section on the basics (variables, functions, flow c
 - Display the initial list of books in the library.
 - Simulate checking out the book "To Kill a Mockingbird" and display the updated library.
 - Simulate returning the book "To Kill a Mockingbird" and display the final library.
+
+## Project Reflection 01/10/24
+
+- This practice project is complete! Yay!
+- This was a good way of reinforcing the things that I have been learning about Go lang.
+- I was able to complete each task using the practice exercises and tools that I learned from the first chapter of the go tour.
+- If I was to improve things, I would make the following changes:
+  -- Change the checkout and return functions to only require a book title and not a book object
+  -- modify the initialization of the library in the main function as a more specific library such as the Library of Alexandria and include themed books in that library
+  -- possibly just use one map to hold the book titles, authors, and availability statuses. In my code I have a slice of books and a seperate map tracking availability and I think it might be more simple to have one map holding all of this information

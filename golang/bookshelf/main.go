@@ -24,6 +24,12 @@ func displayBooks(library []Book, availability map[Book]string){
 //Write a function checkoutBook that takes a book title as a parameter and simulates checking out a book.
 func checkoutBook(availability map[Book]string, book Book) {
 	availability[book] = "not available"
+	fmt.Println("You have checked out", book.Title, " It is no longer available at this library")
+}
+
+func returnBook(availability map[Book]string, book Book) {
+	availability[book] = "available"
+	fmt.Println("You have returned", book.Title, " It is now available again at this library")
 }
 
 func main(){
@@ -64,4 +70,19 @@ func main(){
 	
 	checkoutBook(avail, checkMeOut)
 	displayBooks(library, avail)
+
+	//Task 7: Return Book
+	//Write a function returnBook that takes a book title as a parameter and simulates returning a book.
+	//If the book was checked out, mark it as available and print a message.
+	//If the book was not checked out, print a message indicating that it was not checked out from the library.
+
+	returnBook(avail, checkMeOut)
+	displayBooks(library,avail)
+
+	//Task 8: Main Program
+	//Initialize the library and availability map. CHECK!
+	//Display the initial list of books in the library. CHECK!
+	//Simulate checking out the book "The Catcher in the Rye" and display the updated library. CHECK!
+	//Simulate returning the book "The Catcher in the Rye" and display the final library.
+
 }
