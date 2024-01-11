@@ -28,6 +28,8 @@ func needFloat(x float64) float64 {
 	return x * 0.1
 }
 
+//Go Tour Basics Part 1: 
+//Packages, variables, functions
 
 func main() {
 	fmt.Println("1. My favorite number is", rand.Intn(10))
