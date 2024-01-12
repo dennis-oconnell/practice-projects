@@ -27,6 +27,14 @@ func Hypotenuse(v Vertex) float64 {
 //Here is a numeric type 'MyFloat' with an accompanying method called 'AlwaysBePos'
 type MyFloat float64
 
+//4. Pointer Receivers
+//The pointer receiver is necessary here to make permanent changes to the Vertex that we are trying to Scale. 
+//If change the receiver to the value form 'v Vertex' instead of 'v *Vertex', Scale doesn't change when we apply Scale to it
+func (v *Vertex) Scale(f float64) {
+	v.X = v.X * f
+	v.Y = v.Y * f
+}
+
 func (f MyFloat) AlwaysBePos() float64{
 	if f < 0 {
 		return float64(-f)
@@ -56,4 +64,15 @@ func main() {
 	//You cannot declare a method with a receiver whose type is defined in another package (which includes the built in types such as int)
 	f := MyFloat(-math.Sqrt(2))
 	fmt.Println(f.AlwaysBePos())
+
+	//4. Pointer Receivers
+	//You can declare methods with pointer receivers
+	//This means that the receiver type has the literal syntax '*T' for some type 'T' (Also, 'T' itself cannot be a pointer such as '*int')
+
+	//Methods with pointer receivers can modify the value to which the receiver points 
+	//Since methods often need to modify their receiver, pointer receivers are more common than value receivers
+	v = Vertex{3,4}
+	v.Scale(2)
+	fmt.Println(v)
+	fmt.Println(v.Abs())
 }
