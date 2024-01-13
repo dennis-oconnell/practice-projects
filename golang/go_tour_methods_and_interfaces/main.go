@@ -42,6 +42,20 @@ func (f MyFloat) AlwaysBePos() float64{
 	return float64(f)
 }
 
+//5. Pointers and Functions 
+	//Here we've re-written 'Abs' and 'Scale' to be regular functions 'AbsRegular' and 'ScaleRegular'
+	//This is to evaluate the behavior of these functions when we play with pointer values and references
+	//When we do this we see how to behavior of a normal function and a method are different from one another
+
+func AbsRegular(v Vertex) float64{
+	return math.Sqrt(v.X*v.X + v.Y*v.Y)
+}
+
+func ScaleRegular(v *Vertex, f float64){
+	v.X = v.X * f
+	v.Y = v.Y * f
+}
+
 func main() {
 	//1. Methods
 	//Go has no classes! Java programmers be warned!
@@ -75,4 +89,15 @@ func main() {
 	v.Scale(2)
 	fmt.Println(v)
 	fmt.Println(v.Abs())
+
+	//5. Pointers and Functions 
+	//Here we've re-written 'Abs' and 'Scale' to be regular functions 'AbsRegular' and 'ScaleRegular'
+	//This is to evaluate the behavior of these functions when we play with pointer values and references
+	//When we do this we see how to behavior of a normal function and a method are different from one another
+	v = Vertex{9,40}
+	ScaleRegular(&v, 10)
+	fmt.Println(v)
+	fmt.Println(AbsRegular(v))
+	//here, we could remove the * operator in the ScaleRegular func declaration, but then we would also have to remove the & operator here in the function call for the program to compile.
+	//When we do remove the & and * then the func will run but not make lasting changes to the thing which you are calling the function on
 }
