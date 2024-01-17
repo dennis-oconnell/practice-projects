@@ -56,6 +56,12 @@ func ScaleRegular(v *Vertex, f float64){
 	v.Y = v.Y * f
 }
 
+//6. ScaleFunc takes a pointer to a vertex and a float to determine the amount of the scaling
+func ScaleFunc(v *Vertex, f float64) {
+	v.X = v.X * f
+	v.Y = v.Y * f
+}
+
 func main() {
 	//1. Methods
 	//Go has no classes! Java programmers be warned!
@@ -100,4 +106,31 @@ func main() {
 	fmt.Println(AbsRegular(v))
 	//here, we could remove the * operator in the ScaleRegular func declaration, but then we would also have to remove the & operator here in the function call for the program to compile.
 	//When we do remove the & and * then the func will run but not make lasting changes to the thing which you are calling the function on
+
+	//6. Methods and Pointer Functions
+	//Functions with pointer arguments must take a pointer. Example below:
+	/*
+		var v Vertex
+		ScaleFunc(v, 5) // compile error
+		ScaleFunc(&v, 5) // OK!
+	*/
+	//But, methods with pointer receivers take either a value or a pointer as the receiver when they are called. Example below:
+	/*
+		var v Vertex
+		v.Scale(5) // OK!
+		p:= &v 
+		p.Scale(10) // Also OK!
+	*/
+	//In the above example, in the second line, even though v is a value and not a pointer, the method with the pointer receiver is called automatically
+	//That is, as a convenience, Go interprets v.Scale(5) as if it were "(&v).Scale(5)" since the Scale method has a pointer receiver
+	v = Vertex{3,4}
+	v.Scale(2)			//Scale and ScaleFunc operate in similar ways
+	ScaleFunc(&v, 10)	//ScaleFunc takes a pointer address to v here
+	fmt.Println(v)
+
+	p := &Vertex{4,3}
+	p.Scale(3)
+	ScaleFunc(p, 8)
+	
+	fmt.Println(p)
 }
