@@ -56,10 +56,15 @@ func ScaleRegular(v *Vertex, f float64){
 	v.Y = v.Y * f
 }
 
-//6. ScaleFunc takes a pointer to a vertex and a float to determine the amount of the scaling
+//6. ScaleFunc is a function, not a method, that takes a pointer to a vertex and a float to determine the amount of the scaling
 func ScaleFunc(v *Vertex, f float64) {
 	v.X = v.X * f
 	v.Y = v.Y * f
+}
+
+//7. AbsFunc is a function, not a method, that receives a vertex VALUE argument, not a POINTER argument 
+func AbsFunc(v Vertex) float64 {
+	return math.Sqrt(v.X*v.X + v.Y*v.Y)
 }
 
 func main() {
@@ -131,6 +136,33 @@ func main() {
 	p := &Vertex{4,3}
 	p.Scale(3)
 	ScaleFunc(p, 8)
-	
+
 	fmt.Println(p)
+
+	//7. Methods and Pointer Indirection Part 2
+	//The equivalent thing happens in the reverse direction
+	//Functions that take a value argument must take a value of that specific type:
+	/*
+		var v Vertex
+		fmt.Println(AbsFunc(v))		//OK!
+		fmt.Println(AbsFunc(&v))	//Compile Error! AbsFunc is a function that takes a value argument not a pointer argument
+	*/
+
+	//While methods with value receivers take either a value or a pointer as the receiver when they are called:
+	/*
+		var v Vertex
+		fmt.Println(v.Abs()) 		//OK!
+		p := &v
+		fmt.Println(p.Abs()) 		//OK! A
+	*/
+	//In the case above, the method call p.Abs() will be interpreted as (*p).Abs()
+	v = Vertex{3,4}
+	fmt.Println(v.Abs())
+	fmt.Println(AbsFunc(v))
+
+	p = &Vertex{4, 3}
+	fmt.Println(p.Abs())
+	fmt.Println(AbsFunc(*p))
+
+	
 }
