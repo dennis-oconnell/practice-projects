@@ -67,6 +67,18 @@ func AbsFunc(v Vertex) float64 {
 	return math.Sqrt(v.X*v.X + v.Y*v.Y)
 }
 
+//9. My First Interface!
+type Abser interface {
+	Abs() float64
+}
+
+func (f MyFloat) Abs() float64 {
+	if f < 0 {
+		return float64(-f)
+	}
+	return float64(f)
+}
+
 func main() {
 	//1. Methods
 	//Go has no classes! Java programmers be warned!
@@ -164,5 +176,24 @@ func main() {
 	fmt.Println(p.Abs())
 	fmt.Println(AbsFunc(*p))
 
+	//8. Choosing a value or a pointer receiver
+	//There are two reasons to use a pointer receiver
+		//First, so that the method can modify the value that its receiver points to 
+		//Second, is to avoid copying the value on each method call
+			//This can be more efficient if the receiver is a large struct, for example
 	
+	
+
+
+	//9. Interfaces
+	//An Interface type is defined as a set of method signatures
+	//A value interface type can hold any value that implements those methods
+	var abe Abser
+	h := MyFloat(-math.Sqrt2)
+	g := Vertex{3,4}
+
+	abe = h		//a MyFloat implements Abser
+	abe = &g		//a *Vertex implements Abser
+
+	fmt.Println(abe.Abs())
 }
