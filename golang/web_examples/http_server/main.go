@@ -31,8 +31,7 @@ func main() {
 		r.FormValue("email")
 */
 	http.HandleFunc("/", func (w http.ResponseWriter, r *http.Request) {
-		fmt.Fprint(w, "Welcome to this website made possible by Go! HEY LOOK AT ME")
-		fmt.Fprint(w, "Welcome to this website made possible by Go!")
+		fmt.Fprint(w, "Welcome to this website made possible by Go! \n")
 	})
 
 /*
@@ -47,12 +46,11 @@ func main() {
 	//We do this in the same way that we did with dynamic requests
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
 
-
 /*
 	3. ACCEPT CONNECTIONS
 	The last thing to finish off our basic HTTP server is to listen on a port to accept new connections from the internet
 	Go has an inbuilt HTTP server
 */
-	http.ListenAndServe(":80", nil)
+	http.ListenAndServe(":10", nil)
 
 }
