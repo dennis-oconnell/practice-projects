@@ -44,6 +44,11 @@ func main() {
 	//Implicit interfaces decouple the definition of an interface from its implementation, which could then appear in any package without prearrangement
 	var i I = T{"hello"}
 	i.M()
+
+	//11. Interface Values
+	//Under the hood, interface values can be thought of as a tuple of a value and a concrete type: (value, type)
+	//An interface value holds a value of a specific underlying concrete type
+	//Calling a method on an interface value executes the mehtod on the same name on its underlying type
 }
 
 type MyFloat float64
