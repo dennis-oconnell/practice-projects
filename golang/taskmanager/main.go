@@ -56,15 +56,48 @@ func displayTask(task *Task){
 	fmt.Printf(" Task Title: %s\n Task Description: %s\n Task Status: %s\n", task.Title, task.Description, task.Status)
 }
 
-// Methods for TaskManager to add tasks, mark as completed, and display all tasks
+// Methods for TaskManager to add tasks
+func (tm *TaskManager) AddTask(title string, description string) {
+	nt := newTask(title,description)
+	tm.Tasks = append(tm.Tasks, nt)
+}
+
+//Method for TaskManager to mark task as completed
+func (tm *TaskManager) MarkTaskComplete(index int) {
+	if index >= 0 && index < len(tm.Tasks) {
+        tm.Tasks[index].Status = "Complete"
+    } else {
+        fmt.Println("Invalid index")
+    }
+}
+
+//Method for TaskManager to display all tasks
+func (tm *TaskManager) DisplayTasks() {
+
+	fmt.Println()
+
+	for i := 0; i < len(tm.Tasks); i++ {
+		displayTask(tm.Tasks[i])
+		fmt.Println()
+	}
+}
 
 // Implement methods here...
 
 func main() {
+	/*
 	 mySecondTask := newTask("mySecondTask", "This is the second task made by this Go program!")
-
 	 mySecondTask.Title = "Actually this is the title"
 	 mySecondTask.markComplete()
-
 	 displayTask(mySecondTask)
+	*/
+	 myTaskManager := TaskManager {}
+
+	 myTaskManager.AddTask("Build A House", "First, Buy Wood. Then Nails. Then Hammer. Then Build.")
+	 myTaskManager.AddTask("Task 2", "This is the second task")
+	 myTaskManager.AddTask("Task 3", "This is the third task")
+
+	 myTaskManager.MarkTaskComplete(0)
+	 myTaskManager.MarkTaskComplete(5)
+	 myTaskManager.DisplayTasks()
 }
