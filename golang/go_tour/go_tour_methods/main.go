@@ -67,6 +67,13 @@ func AbsFunc(v Vertex) float64 {
 	return math.Sqrt(v.X*v.X + v.Y*v.Y)
 }
 
+//8. Choosing a value or pointer receiver
+	//Here I am redefined Abs to have a pointer receiver instead of a value receiver
+	//We are changing the name from 'Abs' to 'AbsPoint'
+	func (v *Vertex) AbsPoint() float64 {
+		return math.Sqrt(v.X*v.X + v.Y*v.Y)
+	}
+
 func main() {
 	//1. Methods
 	//Go has no classes! Java programmers be warned!
@@ -169,6 +176,11 @@ func main() {
 		//First, so that the method can modify the value that its receiver points to 
 		//Second, is to avoid copying the value on each method call
 			//This can be more efficient if the receiver is a large struct, for example
+	u := &Vertex{3,4}
+	fmt.Printf("Before scaling: %+v, Abs: %v\n", u, u.AbsPoint())
 	
+	u.Scale(5)
+	fmt.Printf("Before scaling: %+v, Abs: %v\n", u, u.AbsPoint())
+
 	
 }
