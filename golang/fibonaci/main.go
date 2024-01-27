@@ -12,7 +12,7 @@ func fib(j int) {
 	i := 0
 	for i < j {
 		fmt.Println(alpha + beta)
-		temp := alpha 
+		temp := alpha
 		alpha = beta
 		beta = temp + beta
 		i++
