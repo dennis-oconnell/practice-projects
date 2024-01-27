@@ -5,3 +5,13 @@ package calculator
 func Add(a,b float64) float64 {
 	return a + b
 }
+
+//Subtract takes two numbers a and b
+//returns the result of subtracting b from a 
+func Subtract(a, b float64) float64 {
+	return a - b
+}
+
+func Multiply(a, b float64) float64 {
+	return a * b 
+}
