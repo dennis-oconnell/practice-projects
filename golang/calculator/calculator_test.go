@@ -71,6 +71,35 @@ func TestMultiply(t *testing.T) {
 	}
 }
 
+func TestDivide(t *testing.T) {
+	t.Parallel()
+
+	type testCase struct {
+		a, b float64
+		want float64
+	}
+
+	testCases := []testCase{
+		{a: 2, b: 2, want: 1},
+		{a: -4, b: -2, want: 2},
+		{a: 25, b: 5, want: 5},
+	}
+
+	for _, tc := range testCases {
+		got, err := calculator.Divide(tc.a, tc.b)
+
+		if err != nil {
+			//We use Fatalf here rather than Errorf
+			//Errorf marks the test as failed, but continues executing the rest of the test
+			//Fatalf exits the test immediatley
+			//Fatalf says that things are so broken they are no longer worth continuing
+			t.Fatalf("want no error for valid input, got %v", err)
+		}
+		if tc.want != got {
+			t.Errorf("Divide (%f, %f): want %f, got %f", tc.a, tc.b, tc.want, got)
+		}
+	}
+}
 /*
 	THINGS TO KNOW ABOUT TESTS IN GO!
 		1. Each test in Go is a function
