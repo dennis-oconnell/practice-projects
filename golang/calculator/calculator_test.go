@@ -100,6 +100,27 @@ func TestDivide(t *testing.T) {
 		}
 	}
 }
+
+func TestDivideInvalid(t *testing.T) {
+	t.Parallel()
+	
+	type testCase struct {
+		a, b float64
+	}
+
+	testCases := []testCase{
+		{a: 2, b: 0,},
+		{a: -4, b: 0,},
+		{a: 25, b: 0,},
+	}
+
+	for _, tc := range testCases {
+		_, err := calculator.Divide(tc.a, tc.b)
+		if err == nil {
+			t.Errorf("Want error for invalid input, got nil")
+		}
+	}
+}
 /*
 	THINGS TO KNOW ABOUT TESTS IN GO!
 		1. Each test in Go is a function
