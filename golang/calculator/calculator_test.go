@@ -2,6 +2,7 @@ package calculator_test
 
 import (
 	"calculator"
+	"math"
 	"testing"
 )
 
@@ -71,6 +72,12 @@ func TestMultiply(t *testing.T) {
 	}
 }
 
+//When comparing floating point values, remember that they have limited precision
+//So, we need a looser comparison
+func closeEnough(a, b, tolerance float64) bool {
+	return math.Abs(a-b) <= tolerance
+}
+
 func TestDivide(t *testing.T) {
 	t.Parallel()
 
@@ -80,7 +87,7 @@ func TestDivide(t *testing.T) {
 	}
 
 	testCases := []testCase{
-		{a: 2, b: 2, want: 1},
+		{a: 1, b: 3, want: .33333},
 		{a: -4, b: -2, want: 2},
 		{a: 25, b: 5, want: 5},
 	}
@@ -89,19 +96,19 @@ func TestDivide(t *testing.T) {
 		got, err := calculator.Divide(tc.a, tc.b)
 
 		if err != nil {
-			//We use Fatalf here rather than Errorf
-			//Errorf marks the test as failed, but continues executing the rest of the test
-			//Fatalf exits the test immediatley
-			//Fatalf says that things are so broken they are no longer worth continuing
+				//We use Fatalf here rather than Errorf
+				//Errorf marks the test as failed, but continues executing the rest of the test
+				//Fatalf exits the test immediatley
+				//Fatalf says that things are so broken they are no longer worth continuing
 			t.Fatalf("want no error for valid input, got %v", err)
 		}
-		if tc.want != got {
+		if !closeEnough(tc.want, got, .0001) {
 			t.Errorf("Divide (%f, %f): want %f, got %f", tc.a, tc.b, tc.want, got)
 		}
 	}
 }
 
-func TestDivideInvalid(t *testing.T) {
+func TestDivideInvalidInput(t *testing.T) {
 	t.Parallel()
 	
 	type testCase struct {
@@ -117,10 +124,48 @@ func TestDivideInvalid(t *testing.T) {
 	for _, tc := range testCases {
 		_, err := calculator.Divide(tc.a, tc.b)
 		if err == nil {
-			t.Errorf("Want error for invalid input, got nil")
+			t.Errorf("Want error for invalid input, got nil, i.e. no error")
 		}
 	}
 }
+
+func TestSqrt(t *testing.T){
+	t.Parallel()
+
+	type testCase struct {
+		x float64
+		want float64
+	}
+
+	testCases := []testCase{
+		{x: 4, want:2,},
+		{x: 8, want:2.828,},
+		{x: 16, want:4,},
+	}
+
+	for _, tc := range testCases {
+		got, err := calculator.Sqrt(tc.x)
+
+		if err!= nil {
+			t.Fatalf("Error!")
+		}
+
+		if !closeEnough(tc.want, got, .001){
+			t.Errorf("Sqrt of %f: want %f, got %f", tc.x, tc.want, got)
+		}
+	}
+}
+
+func TestSqrtInvalidInput(t *testing.T) {
+	t.Parallel()
+
+	_, err := calculator.Sqrt(-1)
+
+	if err == nil {
+		t.Errorf("Want error for invalid input, got nil, i.e. no error")
+	}
+}
+
 /*
 	THINGS TO KNOW ABOUT TESTS IN GO!
 		1. Each test in Go is a function
