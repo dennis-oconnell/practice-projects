@@ -32,6 +32,15 @@ func CalculateTotalPrice(products []Product) float64 {
 	return total
 }
 
+type Customer struct {
+	Name string
+	Cart []Product
+}
+
+func Checkout (crusty Customer) float64 {
+	return CalculateTotalPrice(crusty.Cart)
+}
+
 func main() {
 	var b1 Book = Book{"The Magicians", 9.00}
 	var m1 Movie = Movie{"Casa Blanca", 12.50}
@@ -41,4 +50,16 @@ func main() {
 	fmt.Println(b1.GetPrice())
 	fmt.Println(m1.GetPrice())
 	fmt.Println(CalculateTotalPrice(myProducts))
+
+	var c1 Book = Book{"The Magicians", 9.00}
+	var c2 Movie = Movie{"Casa Blanca", 12.50}
+	var c3 Book = Book{"The Magicians", 9.00}
+	var c4 Movie = Movie{"Casa Blanca", 12.50}
+
+	cstuff := []Product{c1,c2,c3,c4}
+
+	var chris = Customer{"Chris", cstuff}
+
+	fmt.Println(Checkout(chris))
+
 }

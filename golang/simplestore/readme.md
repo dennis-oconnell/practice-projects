@@ -4,8 +4,8 @@ Implement two struct types: Book and Movie. Each should have fields for Title (s
 
 Define a function called CalculateTotalPrice that takes a slice of Product interface values and returns the total price of all the products. COMPLETE!
 
-Implement a Customer struct with fields for Name (string) and Cart (a slice of Product interface values).
+Implement a Customer struct with fields for Name (string) and Cart (a slice of Product interface values). COMPLETE!
 
-Create a function called Checkout that takes a Customer and returns the total price of the items in their cart. If the cart is empty or nil, return 0.
+Create a function called Checkout that takes a Customer and returns the total price of the items in their cart. If the cart is empty or nil, return 0. COMPLETE!
 
 Ensure that nil interface values behave appropriately in your program.
