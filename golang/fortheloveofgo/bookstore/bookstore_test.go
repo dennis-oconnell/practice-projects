@@ -31,6 +31,6 @@ func TestBuy(t *testing.T) {
 	got := result.Copies
 
 	if want != got {
-		t.Errorf("Bought (%f): want %f, got %f", tbook.Title, want, got)
+		t.Errorf("Bought (%s): want %d, got %d", tbook.Title, want, got)
 	}
 }
