@@ -11,10 +11,14 @@ type Book struct {
 func Buy(b Book) (Book, error) {
 
 	if b.Copies == 0 {
-		return Book{}, errors.New("No Copies Left")
+		return Book{}, errors.New("no copies left")
 	}
 
 	b.Copies = b.Copies - 1
 	return b, nil
 
+}
+
+func GetAllBooks(catalog []Book) []Book{
+	return catalog
 }
