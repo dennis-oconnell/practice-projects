@@ -77,3 +77,18 @@ func TestGetAllBooks(t *testing.T){
 		t.Error(cmp.Diff(want,got))
 	}
 }
+
+func TestGetBook(t *testing.T){
+	t.Parallel()
+
+	want :=  []bookstore.Book{
+		{Title: "For the Love of Go"},
+		{Title: "The Power of Go: Tools"},
+	}
+
+	got := bookstore.GetBook(catalog, 1)
+
+	if !cmp.Equal(want,got){
+		t.Error(cmp.Diff(want,got))
+	}
+}
