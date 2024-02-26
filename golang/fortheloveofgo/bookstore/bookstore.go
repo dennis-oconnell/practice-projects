@@ -22,3 +22,7 @@ func Buy(b Book) (Book, error) {
 func GetAllBooks(catalog []Book) []Book{
 	return catalog
 }
+
+func GetBook(catalog []Book, id int) Book {
+	return Book{}
+}
