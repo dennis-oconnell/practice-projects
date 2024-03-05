@@ -113,5 +113,5 @@ func TestGetBookBadIDReturnsError(t *testing.T){
 		t.Fatal("want error for non-existent ID, got nil")
 	}
 
-	b, ok := catalog[999]
+	//b, ok := catalog[999]
 }
