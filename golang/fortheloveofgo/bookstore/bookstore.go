@@ -23,8 +23,14 @@ func Buy(b Book) (Book, error) {
 
 }
 
-func GetAllBooks(catalog []Book) []Book{
-	return catalog
+func GetAllBooks(catalog map[int]Book) []Book{
+	result := []Book{}
+
+	for _, b := range catalog{
+		result = append(result, b)
+	}
+	
+	return result
 }
 
 func GetBook(catalog map[int]Book, id int) (Book, error) {
