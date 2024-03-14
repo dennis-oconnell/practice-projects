@@ -61,14 +61,14 @@ func TestBuyErrorsIfNoCopyLeft(t *testing.T){
 func TestGetAllBooks(t *testing.T){
 	t.Parallel()
 
-	catalog := []bookstore.Book{
-		{Title: "For the Love of Go"},
-		{Title: "The Power of Go: Tools"},
+	catalog := map[int]bookstore.Book{
+		1: {ID: 1, Title: "For the Love of Go"},
+		2: {ID: 2, Title: "The Power of Go: Tools"},
 	}
 
 	want := []bookstore.Book{
-		{Title: "For the Love of Go"},
-		{Title: "The Power of Go: Tools"},
+		{ID: 1, Title: "For the Love of Go"},
+		{ID: 2, Title: "The Power of Go: Tools"},
 	}
 
 	got := bookstore.GetAllBooks(catalog)
