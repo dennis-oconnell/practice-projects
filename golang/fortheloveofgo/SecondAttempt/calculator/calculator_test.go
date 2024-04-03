@@ -106,3 +106,17 @@ func TestDivide(t *testing.T){
 		}
 	}
 }
+
+func TestDivideInvalid(t *testing.T){
+	t.Parallel()
+
+	a:= 1.0
+	b:= 0.0
+
+	_, err := calculator.Divide(a, b)
+
+	if(err == nil){
+		t.Error("Invalid input, wanted an error to be thrown, but error was not thrown!")
+	}
+
+}
