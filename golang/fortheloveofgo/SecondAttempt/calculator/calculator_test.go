@@ -120,3 +120,7 @@ func TestDivideInvalid(t *testing.T){
 	}
 
 }
+
+func closeEnough (a, b, tolerance float64) bool {
+	return Math.Abs()
+}
