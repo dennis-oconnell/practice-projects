@@ -2,6 +2,7 @@ package calculator_test
 
 import (
 	"calculator"
+	"math"
 	"testing"
 )
 
@@ -90,10 +91,10 @@ func TestDivide(t *testing.T){
 	testCases := []testCase{
 		{a: 12,b:3, want:4},
 		{a:-20, b:4, want: -5},
-		{a:2.5, b:.5, want:5},
+		{a:1, b:3, want:0.3333},
 	}
 
-	for key, tc := range testCases{
+	for _, tc := range testCases{
 
 		got, err := calculator.Divide(tc.a,tc.b)
 
@@ -101,8 +102,8 @@ func TestDivide(t *testing.T){
 			t.Fatalf("want no error for valid input, got %v", err)
 		}
 
-		if testCases[key].want != got{
-			t.Errorf("want: %f, got: %f", testCases[key].want, got)
+		if closeEnough(tc.want, got, .001){
+			t.Errorf("want: %f, got: %f", tc.want, got)
 		}
 	}
 }
@@ -122,5 +123,9 @@ func TestDivideInvalid(t *testing.T){
 }
 
 func closeEnough (a, b, tolerance float64) bool {
-	return Math.Abs()
+	if (math.Abs(a-b) <= tolerance){
+		return false
+	}
+	return true	
+	
 }
