@@ -6,3 +6,7 @@ type Book struct {
 	Quantity int
 	Price    float64
 }
+
+func Buy(b Book) Book {
+	return b
+}
