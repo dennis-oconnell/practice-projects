@@ -7,6 +7,7 @@ type Book struct {
 	Author   string
 	Quantity int
 	Price    float64
+	ID int
 }
 
 func Buy(b Book) (Book, error) {
@@ -20,4 +21,14 @@ func Buy(b Book) (Book, error) {
 
 func GetAllBooks(c []Book) []Book {
 	return c
+}
+
+func GetBook(c []Book, id int) Book {
+	for _, book := range c {
+		if id == book.ID {
+			return book
+		}
+	}
+	
+	return Book{}
 }

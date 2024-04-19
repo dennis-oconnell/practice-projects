@@ -115,6 +115,50 @@ func Test_Get_All_Books(t *testing.T){
 	}
 
 	if(!cmp.Equal(want,got)){
-		t.Error("our GetAllBooks function does not yield the correct list of books")
+		difference := cmp.Diff(want,got)
+		t.Errorf("GetAllBooks() mismatch: \n%s", difference)
+	}
+}
+
+func Test_Get_Book(t *testing.T){
+	t.Parallel()
+
+	catalog := []bookstore.Book{
+		{
+			Title:"Charlotte's Web",
+			Author: "E.B. White",
+			Quantity: 4,
+			Price:12.49,
+			ID: 0,
+		},
+		{
+			Title: "Matilda",
+			Author: "Roald Dahl",
+			Quantity: 7,
+			Price: 8.99,
+			ID: 1,
+		},
+		{
+			Title: "Where the Wild Things Are",
+			Author: "Maurice Sendak",
+			Quantity: 3,
+			Price: 11.00,
+			ID: 2,
+		},
+	}
+
+	got := bookstore.GetBook(catalog,2)
+
+	want := bookstore.Book{
+		Title: "Where the Wild Things Are",
+		Author: "Maurice Sendak",
+		Quantity: 3,
+		Price: 11.00,
+		ID: 2,
+	}
+
+	if(!cmp.Equal(want,got)){
+		difference := cmp.Diff(want,got)
+		t.Errorf("Buy() mismatch: \n%s", difference)
 	}
 }
