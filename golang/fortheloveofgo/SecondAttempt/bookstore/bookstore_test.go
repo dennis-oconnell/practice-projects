@@ -70,20 +70,20 @@ func Test_Buy_Invalid_Input(t *testing.T){
 func Test_Get_All_Books(t *testing.T){
 	t.Parallel()
 
-	catalog := []bookstore.Book{
-		{
+	catalog := map[int]bookstore.Book{
+		1: {
 			Title:"Charlotte's Web",
 			Author: "E.B. White",
 			Quantity: 4,
 			Price:12.49,
 		},
-		{
+		2: {
 			Title: "Matilda",
 			Author: "Roald Dahl",
 			Quantity: 7,
 			Price: 8.99,
 		},
-		{
+		3: {
 			Title: "Where the Wild Things Are",
 			Author: "Maurice Sendak",
 			Quantity: 3,
@@ -93,20 +93,20 @@ func Test_Get_All_Books(t *testing.T){
 
 	got := bookstore.GetAllBooks(catalog)
 
-	want := []bookstore.Book{
-		{
+	want := map[int]bookstore.Book{
+		1: {
 			Title:"Charlotte's Web",
 			Author: "E.B. White",
 			Quantity: 4,
 			Price:12.49,
 		},
-		{
+		2: {
 			Title: "Matilda",
 			Author: "Roald Dahl",
 			Quantity: 7,
 			Price: 8.99,
 		},
-		{
+		3: {
 			Title: "Where the Wild Things Are",
 			Author: "Maurice Sendak",
 			Quantity: 3,

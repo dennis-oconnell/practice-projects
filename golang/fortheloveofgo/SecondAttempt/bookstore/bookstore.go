@@ -21,7 +21,7 @@ func Buy(b Book) (Book, error) {
 	return b, nil
 }
 
-func GetAllBooks(cat []Book) []Book {
+func GetAllBooks(cat map[int]Book) map[int]Book {
 	return cat
 }
 
