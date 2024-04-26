@@ -2,6 +2,7 @@ package bookstore
 
 import (
 	"errors"
+	"fmt"
 )
 
 type Book struct {
@@ -21,8 +22,14 @@ func Buy(b Book) (Book, error) {
 	return b, nil
 }
 
-func GetAllBooks(cat map[int]Book) map[int]Book {
-	return cat
+func GetAllBooks(cat map[int]Book) []Book {
+	c := []Book{}
+	
+	for key := range cat{
+		c = append(c, cat[key]) 
+	}
+	fmt.Println(c)
+	return c
 }
 
 func GetBook(cat map[int]Book, id int) (Book, error) {

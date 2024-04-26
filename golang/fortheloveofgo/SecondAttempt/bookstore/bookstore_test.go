@@ -93,20 +93,20 @@ func Test_Get_All_Books(t *testing.T){
 
 	got := bookstore.GetAllBooks(catalog)
 
-	want := map[int]bookstore.Book{
-		1: {
+	want := []bookstore.Book{
+		{
 			Title:"Charlotte's Web",
 			Author: "E.B. White",
 			Quantity: 4,
 			Price:12.49,
 		},
-		2: {
+		{
 			Title: "Matilda",
 			Author: "Roald Dahl",
 			Quantity: 7,
 			Price: 8.99,
 		},
-		3: {
+		{
 			Title: "Where the Wild Things Are",
 			Author: "Maurice Sendak",
 			Quantity: 3,
